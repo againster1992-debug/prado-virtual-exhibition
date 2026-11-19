@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0d1411">
+<title>光辉时代 · 普拉多博物馆西班牙往事虚拟展厅</title>
+<meta name="description" content="依据微信公众号「獭的游乐场」浦东美术馆普拉多展系列文章构建的网页版虚拟展厅，收录71件作品，含创作年代时间轴、艺术家与流派索引、艺术家关系图。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%237e2f2a'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23f2e6cd' font-family='serif'%3E%E5%85%89%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css?v=20261120n">
+</head>
+<body>
+<div id="app">
+
+  <!-- ============ 入口 ============ -->
+  <section id="intro" class="screen intro">
+    <div class="intro-bg" id="introBg"><img id="introBgImg" alt=""></div>
+    <div class="intro-shade"></div>
+    <div class="intro-grain"></div>
+    <header class="intro-top">
+      <div class="brand-mark">光</div>
+      <div class="brand-text">浦东美术馆“光辉时代”特展 · 虚拟展厅</div>
+      <img class="otter-avatar" src="assets/otter-face.png" alt="獭的游乐场" title="獭的游乐场">
+      <div class="intro-top-actions">
+        <button class="ghost-btn dark music-btn" id="introMusicBtn" type="button" title="背景音乐《阿尔罕布拉宫的回忆》"><span class="music-icon">♪</span><span class="music-text">背景音乐</span></button>
+        <button class="ghost-btn dark" id="introGuideBtn">观展指南</button>
+      </div>
+    </header>
+
+    <main class="intro-main">
+      <div class="intro-copy">
+        <p class="eyebrow">A VIRTUAL EXHIBITION OF SPANISH PAINTING · 1503–1910</p>
+        <h1 class="intro-title"><span>光</span><span>辉</span><span>时</span><span>代</span><i class="seal-inline">普</i></h1>
+        <p class="intro-sub">普拉多博物馆中的西班牙往事 · 71 件作品</p>
+        <p class="intro-lede" id="introLede">19世纪是个变革的年代。从精致典雅的学院派，到现实主义、巴比松画派、印象派、后印象派、新印象派与纳比派，西方艺术在法国完成蜕变，逐渐走向20世纪的现代艺术。</p>
+        <div class="intro-stats" id="introStats"></div>
+        <div class="intro-sections" id="introSections"></div>
+        <div class="intro-actions">
+          <button class="primary" id="enterBtn">进入展厅 <span>→</span></button>
+          <button class="secondary" id="introCatalogBtn">作品目录</button>
+          <button class="secondary" id="introTimelineBtn">时间轴</button>
+          <button class="secondary" id="introNetworkBtn">关系图</button>
+        </div>
+        <p class="intro-source" id="introSource"></p>
+      </div>
+
+      <div class="intro-visual" id="introVisual">
+        <div class="intro-collage" id="introCollage">
+          <div class="ic-col ic-c1">
+            <figure class="im im1" data-ex="e038"><div class="im-media"><img alt="沉醉在爱与音乐中的维纳斯"></div><figcaption>提香 · 沉醉在爱与音乐中的维纳斯</figcaption></figure>
+            <figure class="im im3" data-ex="e001"><div class="im-media"><img alt="蒙娜丽莎（普拉多版）"></div><figcaption>达芬奇工作室 · 普拉多的蒙娜丽莎</figcaption></figure>
+          </div>
+          <div class="ic-col ic-c2">
+            <figure class="im im2" data-ex="e003"><div class="im-media"><img alt="马背上的费利佩二世"></div><figcaption>鲁本斯 · 马背上的费利佩二世</figcaption></figure>
+            <figure class="im im5" data-ex="e052"><div class="im-media"><img alt="阳伞"></div><figcaption>戈雅 · 阳伞</figcaption></figure>
+          </div>
+          <div class="ic-col ic-c3">
+            <figure class="im im4" data-ex="e004"><div class="im-media"><img alt="穿猎装的费利佩四世"></div><figcaption>委拉斯开兹 · 费利佩四世</figcaption></figure>
+          </div>
+        </div>
+        <p class="intro-visual-caption">从文艺复兴到 20 世纪 · 普拉多的西班牙往事</p>
+      </div>
+    </main>
+
+    <footer class="intro-footer">
+      <span class="footer-brand"><img class="otter-foot" src="assets/otter.png" alt=""> 獭的游乐场</span>
+      <span>非官方虚拟展厅 · 仅供学习交流</span>
+      <span class="intro-enter-hint">点击“进入展厅”，按展览顺序漫游</span>
+    </footer>
+  </section>
+
+  <!-- ============ 展厅 ============ -->
+  <section id="gallery" class="screen gallery" hidden>
+    <header class="gallery-top">
+      <button class="icon-btn" id="backHomeBtn" title="返回首页">← <span class="home-text">首页</span></button>
+      <div class="gallery-brand"><span class="mini-seal">光</span><span>光辉时代 · 普拉多西班牙往事</span><img class="otter-mini" src="assets/otter-face.png" alt="獭的游乐场" title="獭的游乐场"></div>
+      <div class="gallery-room-label">
+        <span id="roomChapter">第一板块</span>
+        <b id="roomTitle">诸多学院，诸多学院派</b>
+      </div>
+      <div class="gallery-progress" title="观展进度">
+        <div class="progress-track"><i id="progressBar"></i></div>
+        <span id="progressText">0 / 71</span>
+      </div>
+      <button class="ghost-btn music-btn" id="galleryMusicBtn" type="button" title="背景音乐《阿尔罕布拉宫的回忆》"><span class="music-icon">♪</span><span class="music-text">音乐</span></button>
+      <button class="ghost-btn" id="openTimelineBtn"><span class="lbl-full">时间轴</span><span class="lbl-short">时间</span></button>
+      <button class="ghost-btn" id="openNetworkBtn"><span class="lbl-full">关系图</span><span class="lbl-short">关系</span></button>
+      <button class="ghost-btn" id="openCatalogBtn"><span class="lbl-full">作品目录</span><span class="lbl-short">目录</span></button>
+      <button class="ghost-btn" id="openGuideBtn"><span class="lbl-full">观展指南</span><span class="lbl-short">指南</span></button>
+    </header>
+
+    <div class="gallery-stage" id="stage">
+      <div class="ceiling"></div>
+      <div class="wall-bg" id="wallBg"><img id="wallBgImg" alt=""></div>
+      <div class="wall-shade"></div>
+      <div class="floor"></div>
+      <div class="wall-viewport" id="wallViewport">
+        <div class="wall" id="wall"></div>
+      </div>
+      <button class="nav-arrow left" id="prevBtn" title="向前">‹</button>
+      <button class="nav-arrow right" id="nextBtn" title="向后">›</button>
+      <div class="pan-hint" id="panHint">拖动 / 滚轮横向移动 · 点击画作查看详情</div>
+      <div class="room-loading" id="roomLoading"><span></span></div>
+    </div>
+
+    <footer class="gallery-bottom">
+      <div class="room-route" id="roomRoute"></div>
+      <div class="pan-track"><i id="panFill"></i></div>
+    </footer>
+  </section>
+
+  <!-- ============ 展厅入口（门槛） ============ -->
+  <div class="overlay threshold" id="threshold" hidden>
+    <div class="threshold-bg" id="thresholdBg"><img id="thresholdBgImg" alt=""></div>
+    <div class="threshold-shade"></div>
+    <div class="threshold-panel" id="thresholdPanel">
+      <p class="threshold-kicker" id="thresholdKicker"></p>
+      <h2 class="threshold-title" id="thresholdTitle"></h2>
+      <p class="threshold-sub" id="thresholdSub"></p>
+      <div class="threshold-intro" id="thresholdIntro"></div>
+      <button class="primary" id="thresholdEnterBtn">进入展厅 <span>→</span></button>
+      <p class="threshold-tip">进入后：拖动或滚动鼠标横向移动，点击画作查看详细信息</p>
+      <div class="threshold-knowledge" id="thresholdKnowledge"></div>
+    </div>
+  </div>
+
+  <!-- ============ 展品详情 ============ -->
+  <div class="overlay detail" id="detail" hidden>
+    <header class="detail-top">
+      <button class="icon-btn" id="detailCloseBtn">← <span>返回展厅</span></button>
+      <span class="detail-counter" id="detailCounter"></span>
+      <div class="detail-nav">
+        <button class="ghost-btn" id="detailPrevBtn">← 上一件</button>
+        <button class="ghost-btn" id="detailNextBtn">下一件 →</button>
+      </div>
+    </header>
+    <main class="detail-main">
+      <section class="viewer" id="viewer">
+        <div class="viewer-stage" id="viewerStage">
+          <div class="viewer-art" id="viewerArt"><img id="viewerImg" alt=""></div>
+        </div>
+        <div class="viewer-caption" id="viewerCaption"></div>
+        <div class="viewer-tools">
+          <button class="tool-btn" id="zoomOutBtn" title="缩小">−</button>
+          <button class="tool-btn" id="zoomResetBtn" title="全览">全览</button>
+          <button class="tool-btn" id="zoomInBtn" title="放大">＋</button>
+          <button class="tool-btn" id="viewerOpenBtn" title="保存带水印图片">保存</button>
+          <button class="tool-btn viewer-full-btn" id="viewerFullBtn" title="全屏查看图片" aria-pressed="false">全屏</button>
+        </div>
+        <button class="viewer-exit" id="viewerExitBtn" type="button" title="退出全屏" aria-label="退出全屏">×</button>
+        <div class="viewer-hint" id="viewerHint">滚轮缩放 · 拖动查看细节 · 双击放大</div>
+        <div class="viewer-scrollbar" id="viewerScrollbar"><i></i></div>
+        <div class="viewer-thumbs" id="viewerThumbs"></div>
+      </section>
+      <aside class="detail-panel" id="detailPanel">
+        <div class="detail-head">
+          <p class="detail-kicker" id="detailKicker"></p>
+          <h2 class="detail-name" id="detailName"></h2>
+          <p class="detail-artist" id="detailArtist" role="button" tabindex="0" title="查看艺术家百科"></p>
+          <p class="detail-meta" id="detailMeta"></p>
+        </div>
+        <div class="detail-tags" id="detailTags"></div>
+        <div class="detail-body" id="detailBody"></div>
+        <div class="detail-foot" id="detailFoot"></div>
+        <div class="detail-graph" id="detailGraph"></div>
+      </aside>
+    </main>
+  </div>
+
+  <!-- ============ 作品目录 ============ -->
+  <div class="overlay catalog" id="catalog" hidden>
+    <header class="catalog-top">
+      <div class="catalog-title">
+        <p class="eyebrow">EXHIBIT INDEX</p>
+        <h2>作品目录</h2>
+      </div>
+      <input class="catalog-search" id="catalogSearch" type="search" placeholder="搜索作品、艺术家或流派…" autocomplete="off">
+      <button class="icon-btn" id="catalogCloseBtn">关闭 ×</button>
+    </header>
+    <div class="catalog-filter-wrap">
+      <nav class="catalog-filters" id="catalogRoomFilters"></nav>
+      <nav class="catalog-filters" id="catalogSchoolFilters"></nav>
+      <div class="catalog-select-row">
+        <label>艺术家
+          <select id="catalogArtistSelect"></select>
+        </label>
+        <button class="ghost-btn" id="catalogResetBtn" type="button">清空筛选</button>
+        <span class="catalog-count" id="catalogCount"></span>
+      </div>
+    </div>
+    <div class="catalog-grid" id="catalogGrid"></div>
+  </div>
+
+  <!-- ============ 时间轴 ============ -->
+  <div class="overlay timeline" id="timeline" hidden>
+    <header class="timeline-top">
+      <div class="catalog-title">
+        <p class="eyebrow">CHRONOLOGY · 1503–1910</p>
+        <h2>创作年代时间轴</h2>
+      </div>
+      <div class="timeline-actions">
+        <span class="tl-zoom-label" id="tlZoomLabel">100%</span>
+        <button class="ghost-btn" id="timelineResetBtn" type="button">重置</button>
+        <button class="icon-btn" id="timelineCloseBtn">关闭 ×</button>
+      </div>
+    </header>
+    <div class="timeline-panel">
+      <p class="timeline-lede">缩略图按创作年代落在时间轴上的对应十年段。桌面滚轮可缩放，按住时间轴左右拖动浏览，点击缩略图查看详情；可按流派筛选。</p>
+      <nav class="catalog-filters" id="tlSchoolFilters"></nav>
+      <div class="tl-summary" id="tlSummary"></div>
+      <div class="tl-scroll" id="tlScroll">
+        <div class="tl-canvas" id="tlCanvas">
+          <div class="tl-zoom" id="tlZoom">
+            <div class="tl-axis-line"></div>
+            <div class="tl-years" id="tlYears"></div>
+            <div class="tl-items" id="tlItems"></div>
+          </div>
+        </div>
+      </div>
+      <p class="tl-hint">桌面滚轮缩放 · 按住空白处左右拖动 · 点击缩略图查看作品</p>
+    </div>
+  </div>
+
+  <!-- ============ 艺术家关系图 ============ -->
+  <div class="overlay network" id="network" hidden>
+    <header class="network-top">
+      <div class="catalog-title">
+        <p class="eyebrow">ARTIST NETWORK</p>
+        <h2>艺术家关系图</h2>
+      </div>
+      <div class="timeline-actions">
+        <button class="ghost-btn" id="networkResetBtn" type="button">重置视图</button>
+        <button class="icon-btn" id="networkCloseBtn">关闭 ×</button>
+      </div>
+    </header>
+    <div class="network-panel">
+      <p class="network-lede">以展览中的 47 位艺术家为节点，梳理师承、挚友、同道、影响与论争关系。圆圈越大，代表关系越多、影响越大；拖动平移，滚轮缩放，点击节点查看艺术家与作品。</p>
+      <nav class="catalog-filters" id="networkSchoolFilters"></nav>
+      <div class="network-layout">
+        <div class="network-stage" id="networkStage">
+          <svg class="net-svg" id="netSvg" viewBox="0 0 1400 900" role="img" aria-label="艺术家关系图">
+            <g id="netViewport"></g>
+          </svg>
+          <div class="net-legend" id="netLegend"></div>
+        </div>
+        <aside class="network-info" id="networkInfo">
+          <p class="net-info-kicker">ARTIST</p>
+          <h3 id="netName">点击节点查看</h3>
+          <p class="net-info-meta" id="netMeta"></p>
+          <p class="net-info-blurb" id="netBlurb"></p>
+          <div class="net-info-rel" id="netRel"></div>
+          <div class="net-info-works" id="netWorks"></div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 观展指南 ============ -->
+  <div class="overlay guide" id="guide" hidden>
+    <div class="guide-panel">
+      <p class="eyebrow">VISITOR GUIDE</p>
+      <h2>观展指南</h2>
+      <p class="guide-lede" id="guideLede"></p>
+      <div class="guide-grid" id="guideControls"></div>
+      <div class="guide-sections" id="guideSections"></div>
+      <p class="guide-note" id="guideNote"></p>
+      <button class="primary" id="guideCloseBtn">知道了</button>
+    </div>
+  </div>
+
+  <!-- ============ 标签百科 ============ -->
+  <div class="tag-wiki" id="tagWiki" hidden>
+    <div class="tw-panel" role="dialog" aria-modal="true" aria-labelledby="twTitle">
+      <p class="tw-kicker">FEATURE ENCYCLOPEDIA</p>
+      <h3 class="tw-title" id="twTitle"></h3>
+      <p class="tw-kind" id="twKind"></p>
+      <div class="tw-body" id="twBody"></div>
+      <div class="tw-related">
+        <p class="tw-related-title">相关展品</p>
+        <div class="tw-works" id="twWorks"></div>
+      </div>
+      <p class="tw-source">据公众号文章与通行艺术史资料整理</p>
+      <button class="ghost-btn" id="twCloseBtn" type="button">关闭</button>
+    </div>
+  </div>
+
+  <!-- ============ 艺术家百科 ============ -->
+  <div class="tag-wiki artist-wiki" id="artistWiki" hidden>
+    <div class="tw-panel" role="dialog" aria-modal="true" aria-labelledby="awTitle">
+      <p class="tw-kicker">ARTIST ENCYCLOPEDIA</p>
+      <h3 class="tw-title" id="awTitle"></h3>
+      <p class="tw-kind" id="awMeta"></p>
+      <div class="tw-body" id="awBody"></div>
+      <div class="tw-related">
+        <p class="tw-related-title">本展作品</p>
+        <div class="tw-works" id="awWorks"></div>
+      </div>
+      <div class="tw-related">
+        <p class="tw-related-title">艺术关系</p>
+        <div class="tw-works" id="awRel"></div>
+      </div>
+      <p class="tw-source">据公众号文章与通行艺术史资料整理</p>
+      <button class="ghost-btn" id="awCloseBtn" type="button">关闭</button>
+    </div>
+  </div>
+
+  <div class="loading-mask" id="loadingMask">
+    <div class="loading-seal">光</div>
+    <p>正在布展…</p>
+  </div>
+
+  <div class="toast" id="toast"></div>
+</div>
+<script src="assets/data.js?v=20261120n"></script>
+<script src="assets/app.js?v=20261120n"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
